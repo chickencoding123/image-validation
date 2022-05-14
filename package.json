@@ -1,0 +1,102 @@
+{
+  "name": "image-validation",
+  "version": "1.0.0",
+  "description": "Image validation utility for DOM and Node.js beyond the file extensions",
+  "author": "chickencoding123",
+  "license": "MIT",
+  "main": "dist/validateInNode.js",
+  "module": "dist/validateInNode.mjs",
+  "browser": "dist/validateInDom.js",
+  "bin": "dist/cli.js",
+  "exports": {
+    ".": {
+      "import": "./dist/validateInNode.mjs",
+      "require": "./dist/validateInNode.js"
+    }
+  },
+  "targets": {
+    "global": {
+      "source": "src/cli.ts",
+      "context": "node",
+      "outputFormat": "commonjs",
+      "optimize": false
+    },
+    "main": {
+      "source": "src/validateInNode.ts",
+      "context": "node",
+      "outputFormat": "commonjs"
+    },
+    "module": {
+      "source": "src/validateInNode.ts",
+      "context": "node",
+      "outputFormat": "esmodule"
+    },
+    "browser": {
+      "source": "src/validateInDom.ts",
+      "context": "browser",
+      "outputFormat": "esmodule",
+      "optimize": true
+    }
+  },
+  "homepage": "https://github.com/chickencoding123/image-validation#readme",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "validate",
+    "image",
+    "detect corrupt images",
+    "image file check",
+    "validate image",
+    "validate-image",
+    "image validation",
+    "corrupt image"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chickencoding123/image-validation.git"
+  },
+  "bugs": {
+    "url": "https://github.com/chickencoding123/image-validation/issues"
+  },
+  "scripts": {
+    "build": "tsc && parcel build",
+    "test": "cross-env NODE_ENV=test jasmine --config=jasmine.json && karma start",
+    "lint": "eslint *.ts --fix"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.17.10",
+    "@babel/register": "^7.17.7",
+    "@babel/runtime": "^7.17.9",
+    "@parcel/packager-ts": "^2.5.0",
+    "@parcel/transformer-typescript-types": "^2.5.0",
+    "@types/jasmine": "^4.0.3",
+    "@types/node": "^12.0.0",
+    "@types/sharp": "^0.30.2",
+    "@typescript-eslint/eslint-plugin": "^5.23.0",
+    "@typescript-eslint/parser": "^5.23.0",
+    "babel-preset-react-app": "^10.0.1",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.15.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "jasmine": "^4.1.0",
+    "karma": "^6.3.19",
+    "karma-firefox-launcher": "^2.1.2",
+    "karma-jasmine": "^5.0.0",
+    "karma-typescript": "^5.5.3",
+    "parcel": "^2.5.0",
+    "typescript": "^4.6.4"
+  },
+  "dependencies": {
+    "sharp": "^0.30.4"
+  },
+  "peerDependencies": {
+    "@types/node": ">=12.0.0"
+  },
+  "engines": {
+    "node": ">= 14"
+  }
+}

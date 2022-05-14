@@ -1,0 +1,2 @@
+const e=/^data:image\/\w{2,5};base64,/i;var r=(r,t={throw:!0})=>{let a="";a="string"==typeof r?e.test(r)?r:"data:image/jpeg;base64,"+r:URL.createObjectURL(r);const n=new Image;return new Promise(((e,r)=>{n.addEventListener("error",(()=>{!function(e,r,t){e?.throw?t(new Error("The media resource is either invalid, corrupt or not usable.")):r(!1)}(t,e,r)})),n.addEventListener("load",(()=>{e(!0)}),!1),n.src=a}))};export{r as default};
+//# sourceMappingURL=validateInDom.js.map

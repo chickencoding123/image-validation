@@ -1,0 +1,13 @@
+{
+  "spec_dir": "./src",
+  "spec_files": [
+    "validateInNode.test.ts"
+  ],
+  "helpers": [
+    "../jasmine-helper.js"
+  ],
+  "env": {
+    "stopSpecOnExpectationFailure": false,
+    "random": true
+  }
+}
